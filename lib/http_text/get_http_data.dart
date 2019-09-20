@@ -13,7 +13,11 @@ class _Http_net_text extends State<Httptext> {
     //发起一个get请求
     Response response;
     Dio dio = Dio();
-    response = await dio.get('https://www.apiopen.top/journalismApi');
+    //response = await dio.get('https://www.apiopen.top/journalismApi');
+    response = await dio.get('https://www.apiopen.top/satinCommentApi',queryParameters: {'id':27610708,'page':1});
+
+    //发起一个post请求
+    response = await dio.post("/test", data: {"id": 12, "name": "wendu"});
     setState(() {
       s = response.data.toString();
     });
