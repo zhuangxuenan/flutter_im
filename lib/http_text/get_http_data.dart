@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-class Http_text extends StatefulWidget {
+
+class Httptext extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    @override
-    _Http_net_text createState() => _Http_net_text();
-  }
+  _Http_net_text createState() => _Http_net_text();
 }
 
-class _Http_net_text extends State<Http_text> {
+class _Http_net_text extends State<Httptext> {
   var s = '显示获取的接口信息';
 
   void _getNetMsg() async {
     //发起一个get请求
     Response response;
     Dio dio = Dio();
-    response = await dio.get('https://api.apiopen.top/singlePoetry');
+    response = await dio.get('https://www.apiopen.top/journalismApi');
     setState(() {
       s = response.data.toString();
     });
@@ -32,10 +30,15 @@ class _Http_net_text extends State<Http_text> {
         body: Center(
           child: Column(
             children: <Widget>[
-              FlatButton(
-                onPressed: () {},
-                child: Text('点击获取网络结果'),
+              RaisedButton(
+                onPressed: () {
+                  _getNetMsg();
+                },
+                child: Text(
+                  '点击获取网络结果',
+                ),
               ),
+              Padding(padding: EdgeInsets.only(top: 20.0)),
               Text('$s'),
             ],
           ),

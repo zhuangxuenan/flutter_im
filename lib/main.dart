@@ -6,6 +6,7 @@ import './search.dart';
 import 'package:flutter/services.dart';
 import './video/video_play.dart';
 import './video/chewie/video_play_c.dart';
+import './http_text/get_http_data.dart';
 void main() {
   //强制竖屏
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,DeviceOrientation.portraitDown])
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         "search": (BuildContext context) =>  Search(),
         "video": (BuildContext context) =>  VideoApp(),
         "video_c": (BuildContext context) =>  VideoDemo(),
-        "http_text": (BuildContext context) =>  VideoDemo(),
+        "/http_text": (BuildContext context) =>  Httptext(),
       },
       //添加路由表
       home: new LoadingPage(),

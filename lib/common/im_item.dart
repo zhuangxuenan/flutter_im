@@ -55,8 +55,8 @@ class ImItem extends StatelessWidget {
             case "视频播放":
               Navigator.pushNamed(context, "video");
               break;
-            case "":
-
+            case "消息管理":
+              Navigator.pushNamed(context, "/http_text");
               break;
           }
         });
