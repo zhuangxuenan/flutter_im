@@ -76,8 +76,11 @@ class LifeStatusState extends State<LifeStatus> with WidgetsBindingObserver{
 
         break;
       ///suspending， iOS中没用，安卓里就是挂起，不会再执行 drawframe 回调
-      case AppLifecycleState.suspending:
+      //case AppLifecycleState.suspending:
 
+      //  break;
+      case AppLifecycleState.detached:
+        // TODO: Handle this case.
         break;
     }
   }
